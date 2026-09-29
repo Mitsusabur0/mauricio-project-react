@@ -29,7 +29,6 @@ export function TreatmentCard({ treatment, index }: TreatmentCardProps) {
         aria-controls={panelId}
         onClick={() => setOpen((current) => !current)}
       >
-        <span className="treatment-number">{String(index + 1).padStart(2, '0')}</span>
         <span className="treatment-title">{treatment.title}</span>
         <span className="round-icon"><PlusIcon /></span>
       </button>

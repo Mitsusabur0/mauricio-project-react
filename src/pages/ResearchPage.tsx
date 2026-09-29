@@ -7,7 +7,6 @@ export function ResearchPage() {
       <section className="research-hero">
         <div className="page-shell research-hero-grid">
           <div className="research-heading">
-            <span className="eyebrow eyebrow--light">Investigación y docencia</span>
             <h1>Conocimiento que avanza la práctica clínica</h1>
           </div>
           <div className="research-hero-media">
@@ -25,8 +24,8 @@ export function ResearchPage() {
             <span>Publicaciones y noticias</span>
             <span>{String(publications.length).padStart(2, '0')} entradas</span>
           </div>
-          {publications.map((publication, index) => (
-            <PublicationCard key={publication.title} publication={publication} index={index} />
+          {publications.map((publication) => (
+            <PublicationCard key={publication.title} publication={publication} />
           ))}
         </div>
       </section>

@@ -101,7 +101,6 @@ export const credentials = [
 
 export const publications = [
   {
-    author: 'Karin Berkhoff',
     date: '01-12-25',
     title: 'Estudio nacional sobre endometriosis recibió importante reconocimiento',
     description:
@@ -110,7 +109,6 @@ export const publications = [
     imagePosition: 'center 57%',
   },
   {
-    author: 'Karin Berkhoff',
     date: '06-12-24',
     title:
       'Cerclaje cervicoístmico laparoscópico: un abordaje sin agujas para el manejo de la insuficiencia cervical en pacientes embarazadas y no embarazadas.',
@@ -120,7 +118,6 @@ export const publications = [
     imagePosition: 'center 48%',
   },
   {
-    author: 'Karin Berkhoff',
     date: '13-10-24',
     title: 'Nueva publicación de capítulo sobre técnicas de histeroscopía quirúrgica',
     description:
@@ -129,7 +126,6 @@ export const publications = [
     imagePosition: 'left center',
   },
   {
-    author: 'Karin Berkhoff',
     date: '28-09-24',
     title: 'Curso de ecografía ginecológica avanzada',
     description: 'Organizado por Dr. Correa, Dr. Nelson Burgos, Dra. Preisler, Dr. Miranda.',
@@ -137,7 +133,6 @@ export const publications = [
     imagePosition: 'right center',
   },
   {
-    author: 'Karin Berkhoff',
     date: '07-04-24',
     title: 'Cirugía adenomiosis con conservación uterina',
     description:

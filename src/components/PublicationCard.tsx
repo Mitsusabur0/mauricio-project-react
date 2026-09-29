@@ -1,7 +1,6 @@
 import { ArrowIcon } from './Icons'
 
 type Publication = {
-  author: string
   date: string
   title: string
   description: string
@@ -9,7 +8,7 @@ type Publication = {
   imagePosition: string
 }
 
-export function PublicationCard({ publication, index }: { publication: Publication; index: number }) {
+export function PublicationCard({ publication }: { publication: Publication }) {
   return (
     <article className="publication-card">
       <div className="publication-image-wrap">
@@ -18,11 +17,9 @@ export function PublicationCard({ publication, index }: { publication: Publicati
           style={{ objectPosition: publication.imagePosition }}
           alt={`Imagen editorial referencial para ${publication.title}`}
         />
-        <span>{String(index + 1).padStart(2, '0')}</span>
       </div>
       <div className="publication-content">
         <div className="publication-meta">
-          <span>{publication.author}</span>
           <time>{publication.date}</time>
         </div>
         <h2>{publication.title}</h2>

@@ -38,22 +38,20 @@ export function ContactPage() {
         <div className="contact-image-panel">
           <img src={images.clinic} alt="Consulta médica, imagen editorial referencial" />
           <div className="contact-image-copy">
-            <span className="eyebrow eyebrow--light">Valdivia · Chile</span>
             <p>Atención especializada y evaluación personalizada.</p>
           </div>
         </div>
         <div className="contact-form-panel">
           <div className="contact-form-inner">
-            <span className="eyebrow">Contacto</span>
             <h1>Evaluación Dr. Mauricio Correa</h1>
             <p className="contact-intro">
               Completa el formulario y nos pondremos en contacto contigo para orientar los próximos pasos.
             </p>
 
             <div className="contact-links">
-              <a href="mailto:contacto@drmauriciocorrea.cl">
+              <a href="mailto:doctormauriciocorrea@gmail.com">
                 <MailIcon />
-                <span><small>Correo</small>contacto@drmauriciocorrea.cl</span>
+                <span><small>Correo</small>doctormauriciocorrea@gmail.com</span>
               </a>
               <a href="https://www.instagram.com/dr.mauricio.correa/" target="_blank" rel="noreferrer">
                 <InstagramIcon />
@@ -103,7 +101,6 @@ export function ContactPage() {
                 {errors.message && <span id="message-error" className="field-error">{errors.message}</span>}
               </div>
               <div className="form-submit-row field--wide">
-                <p>Este formulario es una demostración y está listo para conectarse a un servicio de envío.</p>
                 <button className="button button--primary" type="submit">Enviar solicitud</button>
               </div>
               {submitted && (
