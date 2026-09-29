@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import { Footer } from './Footer'
 import { Header } from './Header'
+import { publications } from '../data/siteData'
 
 export function Layout() {
   const { pathname } = useLocation()
@@ -14,7 +15,8 @@ export function Layout() {
       '/research': 'Investigación | Dr. Mauricio Correa',
       '/contact': 'Evaluación | Dr. Mauricio Correa',
     }
-    document.title = titles[pathname] ?? titles['/']
+    const detail = publications.find((publication) => pathname === `/research/${publication.slug}`)
+    document.title = detail ? `${detail.title} | Dr. Mauricio Correa` : titles[pathname] ?? titles['/']
   }, [pathname])
 
   return (

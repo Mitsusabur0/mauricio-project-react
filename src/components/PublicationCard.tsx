@@ -1,32 +1,28 @@
+import { Link } from 'react-router-dom'
+import type { Publication } from '../data/siteData'
 import { ArrowIcon } from './Icons'
 
-type Publication = {
-  date: string
-  title: string
-  description: string
-  image: string
-  imagePosition: string
-}
-
 export function PublicationCard({ publication }: { publication: Publication }) {
+  const detailUrl = `/research/${publication.slug}`
+
   return (
     <article className="publication-card">
-      <div className="publication-image-wrap">
+      <Link className="publication-image-wrap" to={detailUrl} aria-label={`Leer más sobre ${publication.title}`}>
         <img
           src={publication.image}
-          style={{ objectPosition: publication.imagePosition }}
-          alt={`Imagen editorial referencial para ${publication.title}`}
+          alt={publication.imageAlt}
+          loading="lazy"
         />
-      </div>
+      </Link>
       <div className="publication-content">
         <div className="publication-meta">
-          <time>{publication.date}</time>
+          <time dateTime={publication.dateTime}>{publication.date}</time>
         </div>
-        <h2>{publication.title}</h2>
+        <h2><Link to={detailUrl}>{publication.title}</Link></h2>
         <p>{publication.description}</p>
-        <button type="button" className="text-link" aria-label={`Leer más sobre ${publication.title}`}>
+        <Link to={detailUrl} className="text-link" aria-label={`Leer más sobre ${publication.title}`}>
           Leer más <ArrowIcon />
-        </button>
+        </Link>
       </div>
     </article>
   )

@@ -1,16 +1,13 @@
 import { PublicationCard } from '../components/PublicationCard'
-import { images, publications } from '../data/siteData'
+import { publications } from '../data/siteData'
 
 export function ResearchPage() {
   return (
     <>
-      <section className="research-hero">
+      <section className="page-hero research-hero">
         <div className="page-shell research-hero-grid">
           <div className="research-heading">
-            <h1>Conocimiento que avanza la práctica clínica</h1>
-          </div>
-          <div className="research-hero-media">
-            <img src={images.research} alt="Cuaderno de investigación médica, imagen editorial referencial" />
+            <h1>Investigación</h1>
           </div>
           <p className="research-intro">
             Publicaciones, reconocimientos y actividades académicas vinculadas a la ginecología, la endometriosis y la cirugía de mínima invasión.

@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom'
 import { ArrowIcon } from '../components/Icons'
-import { images } from '../data/siteData'
+import mauricioImage from '../assets/images/mauricio.webp'
+import operationOneImage from '../assets/images/acerca de/operacion1.webp'
+import operationTwoImage from '../assets/images/acerca de/operacion2.webp'
+import presentationImage from '../assets/images/acerca de/exposición.webp'
 
 const gallery = [
-  { src: images.clinic, alt: 'Consulta médica contemporánea, imagen editorial referencial', position: 'right center' },
-  { src: images.surgery, alt: 'Cirugía mínimamente invasiva, imagen editorial referencial', position: 'center center' },
-  { src: images.research, alt: 'Trabajo de investigación médica, imagen editorial referencial', position: 'center center' },
-  { src: images.clinic, alt: 'Revisión de imágenes clínicas, imagen editorial referencial', position: '83% center' },
-  { src: images.surgery, alt: 'Instrumental laparoscópico, imagen editorial referencial', position: '20% center' },
+  { src: operationOneImage, alt: 'Equipo médico durante una cirugía laparoscópica' },
+  { src: presentationImage, alt: 'Mauricio Correa exponiendo en un congreso médico' },
+  { src: operationTwoImage, alt: 'Profesionales de salud trabajando en un quirófano' },
 ]
 
 export function AboutPage() {
@@ -16,7 +17,6 @@ export function AboutPage() {
       <section className="page-hero about-hero">
         <div className="page-shell page-hero-grid">
           <div className="about-hero-copy">
-            <span className="eyebrow">Trayectoria</span>
             <h1>
               Academia y<br />desarrollo profesional
             </h1>
@@ -29,7 +29,7 @@ export function AboutPage() {
         <div className="page-shell biography-grid">
           <aside>
             <div className="portrait-crop">
-              <img src={images.clinic} alt="Médico revisando imágenes clínicas, fotografía editorial referencial" />
+              <img src={mauricioImage} alt="Mauricio Correa" />
             </div>
           </aside>
           <article className="biography-copy">
@@ -46,13 +46,11 @@ export function AboutPage() {
       <section className="gallery-section section-pad">
         <div className="page-shell gallery-heading">
           <h2>Una mirada al trabajo clínico</h2>
-          <p>Una selección de imágenes que recorre la práctica clínica, quirúrgica, docente y de investigación.</p>
         </div>
         <div className="page-shell editorial-gallery">
-          {gallery.map((item, index) => (
-            <figure key={`${item.alt}-${index}`}>
-              <img src={item.src} alt={item.alt} style={{ objectPosition: item.position }} />
-              <figcaption>{String(index + 1).padStart(2, '0')}</figcaption>
+          {gallery.map((item) => (
+            <figure key={item.src}>
+              <img src={item.src} alt={item.alt} />
             </figure>
           ))}
         </div>

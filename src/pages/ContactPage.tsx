@@ -34,16 +34,18 @@ export function ContactPage() {
 
   return (
     <>
-      <section className="contact-page">
-        <div className="contact-image-panel">
-          <img src={images.clinic} alt="Consulta médica, imagen editorial referencial" />
-          <div className="contact-image-copy">
-            <p>Atención especializada y evaluación personalizada.</p>
-          </div>
+      <section className="contact-hero">
+        <img src={images.clinic} alt="" aria-hidden="true" />
+        <div className="contact-hero-overlay" />
+        <div className="contact-hero-content page-shell">
+          <h1>Evaluación Dr. Mauricio Correa</h1>
         </div>
-        <div className="contact-form-panel">
-          <div className="contact-form-inner">
-            <h1>Evaluación Dr. Mauricio Correa</h1>
+      </section>
+
+      <section className="contact-content section-pad">
+        <div className="page-shell contact-grid">
+          <div className="contact-form-panel">
+            <h2>Solicita tu evaluación</h2>
             <p className="contact-intro">
               Completa el formulario y nos pondremos en contacto contigo para orientar los próximos pasos.
             </p>
@@ -109,6 +111,15 @@ export function ContactPage() {
                 </p>
               )}
             </form>
+          </div>
+          <div className="contact-map-panel">
+            <iframe
+              title="Mapa de Clínica Alemana de Valdivia"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12257.93793875355!2d-73.2395179!3d-39.818554!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0:0xec0daf53bf5b4119!2sCl%C3%ADnica+Alemana+Valdivia!5e0!3m2!1ses!2scl!4v1596061894596!5m2!1ses!2scl"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
           </div>
         </div>
       </section>

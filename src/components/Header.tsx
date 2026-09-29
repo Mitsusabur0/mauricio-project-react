@@ -19,7 +19,6 @@ export function Header() {
       </a>
       <div className="nav-shell">
         <NavLink to="/" className="brand" aria-label="Dr. Mauricio Correa, inicio">
-          <span className="brand-mark" aria-hidden="true">MC</span>
           <span className="brand-name">Dr. Mauricio Correa</span>
         </NavLink>
 

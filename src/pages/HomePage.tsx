@@ -30,34 +30,6 @@ export function HomePage() {
         </div>
       </section>
 
-      <section id="tratamientos" className="treatments-section section-pad">
-        <div className="page-shell split-intro">
-          <SectionHeading
-            title="Tratamientos con una mirada integral"
-            description="Diagnóstico preciso, decisiones informadas y técnicas de mínima invasión para cada etapa del tratamiento. Cada caso requiere una evaluación personalizada y, cuando corresponde, el trabajo coordinado de un equipo multidisciplinario."
-          />
-        </div>
-        <div className="page-shell treatments-list">
-          {treatments.map((treatment, index) => (
-            <TreatmentCard key={treatment.title} treatment={treatment} index={index} />
-          ))}
-        </div>
-      </section>
-
-      <section className="expertise-band">
-        <div className="expertise-image">
-          <img src={images.surgery} alt="Equipo utilizando instrumental de cirugía mínimamente invasiva" />
-          <span className="image-caption">Imagen editorial referencial</span>
-        </div>
-        <div className="expertise-copy">
-          <p className="expertise-statement">Menor trauma, mayor visualización y una recuperación más cuidadosa.</p>
-          <p>
-            La cirugía de mínima invasión reúne tecnología, experiencia y planificación para abordar patologías ginecológicas complejas.
-          </p>
-          <Link to="/about" className="text-link text-link--light">Conocer trayectoria <ArrowIcon /></Link>
-        </div>
-      </section>
-
       <section className="credentials-section section-pad">
         <div className="page-shell credentials-grid">
           <SectionHeading title="Experiencia clínica, docente y científica" />
@@ -72,7 +44,24 @@ export function HomePage() {
                 </li>
               ))}
             </ul>
+            <Link to="/about" className="text-link credentials-link">
+              Conoce al doctor <ArrowIcon />
+            </Link>
           </div>
+        </div>
+      </section>
+
+      <section id="tratamientos" className="treatments-section section-pad">
+        <div className="page-shell split-intro">
+          <SectionHeading
+            title="Tratamientos con una mirada integral"
+            description="Diagnóstico preciso, decisiones informadas y técnicas de mínima invasión para cada etapa del tratamiento. Cada caso requiere una evaluación personalizada y, cuando corresponde, el trabajo coordinado de un equipo multidisciplinario."
+          />
+        </div>
+        <div className="page-shell treatments-list">
+          {treatments.map((treatment, index) => (
+            <TreatmentCard key={treatment.title} treatment={treatment} index={index} />
+          ))}
         </div>
       </section>
 

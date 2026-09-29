@@ -4,6 +4,7 @@ import { AboutPage } from './pages/AboutPage'
 import { ContactPage } from './pages/ContactPage'
 import { HomePage } from './pages/HomePage'
 import { ResearchPage } from './pages/ResearchPage'
+import { ResearchDetailPage } from './pages/ResearchDetailPage'
 import './App.css'
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="research" element={<ResearchPage />} />
+          <Route path="research/:slug" element={<ResearchDetailPage />} />
           <Route path="contact" element={<ContactPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>

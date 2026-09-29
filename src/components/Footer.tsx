@@ -6,11 +6,7 @@ export function Footer() {
     <footer className="site-footer">
       <div className="footer-main page-shell">
         <div className="footer-brand">
-          <span className="brand-mark brand-mark--footer" aria-hidden="true">MC</span>
-          <div>
-            <strong>Dr. Mauricio Correa</strong>
-            <p>Endometriosis · Dolor pélvico · Cirugía de mínima invasión</p>
-          </div>
+          <strong>Dr. Mauricio Correa</strong>
         </div>
         <nav className="footer-nav" aria-label="Navegación de pie de página">
           <Link to="/about">Acerca de</Link>
@@ -21,7 +17,6 @@ export function Footer() {
         </nav>
       </div>
       <div className="footer-bottom page-shell">
-        <span>Clínica Alemana Valdivia</span>
         <span>© {new Date().getFullYear()} Dr. Mauricio Correa</span>
       </div>
     </footer>

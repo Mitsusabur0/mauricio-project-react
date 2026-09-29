@@ -1,6 +1,11 @@
 import clinicImage from '../assets/editorial/clinic-consultation.jpg'
 import researchImage from '../assets/editorial/medical-research.jpg'
 import surgeryImage from '../assets/editorial/minimally-invasive-surgery.jpg'
+import endometriosisStudyImage from '../assets/images/investigacion/1.webp'
+import cerclageImage from '../assets/images/investigacion/2.webp'
+import hysteroscopyImage from '../assets/images/investigacion/3.webp'
+import ultrasoundCourseImage from '../assets/images/investigacion/4.webp'
+import adenomyosisSurgeryImage from '../assets/images/investigacion/5.webp'
 
 export const images = {
   clinic: clinicImage,
@@ -99,45 +104,108 @@ export const credentials = [
   'Miembro Directorio del Capítulo Cirugía Mínimamente Invasiva SOCHOG',
 ]
 
-export const publications = [
+export type Publication = {
+  slug: string
+  date: string
+  dateTime: string
+  title: string
+  description: string
+  image: string
+  imageAlt: string
+  body: string[]
+  participants?: string[]
+  externalLink?: { label: string; url: string }
+}
+
+export const publications: Publication[] = [
   {
+    slug: 'estudio-nacional-endometriosis-reconocimiento',
     date: '01-12-25',
+    dateTime: '2025-12-01',
     title: 'Estudio nacional sobre endometriosis recibió importante reconocimiento',
     description:
       'Los datos preliminares del Estudio Nacional de Endometriosis fueron reconocidos como el Mejor Trabajo de Ginecología en el Congreso Nacional SOCHOG 2025.',
-    image: researchImage,
-    imagePosition: 'center 57%',
+    image: endometriosisStudyImage,
+    imageAlt: 'Recorte de prensa sobre el reconocimiento del estudio nacional de endometriosis',
+    body: [
+      'Se destacó el importante reconocimiento obtenido por el estudio sobre endometriosis liderado por el Dr. Mauricio Correa, director del Instituto de Obstetricia y Ginecología UACh, académico de la especialidad de la Escuela de Graduados y doctor en Ciencias Médicas por la UACh.',
+      'Este primer estudio nacional es desarrollado por un equipo altamente comprometido, integrado también por el Dr. Ignacio Miranda y las matronas Octavia Ihnen y Paula Cayún, además del respaldo de la Fundación Chilena de Endometriosis, Fuchen.',
+      'El estudio fue reconocido como el mejor trabajo en ginecología por la Sociedad Chilena de Obstetricia y Ginecología, un impulso clave para avanzar en más investigación y mejores políticas públicas en salud femenina.',
+    ],
+    participants: [
+      'Dr. Ignacio Miranda',
+      'Matrona Octavia Ihnen',
+      'Matrona Paula Cayún',
+      'Fundación Chilena de Endometriosis',
+      'Agrupaciones de mujeres con endometriosis',
+      'Cada una de las pacientes participantes del estudio',
+    ],
+    externalLink: {
+      label: 'Leer la noticia completa',
+      url: 'https://www.diariodevaldivia.cl/noticia/salud/2025/12/estudio-nacional-sobre-endometriosis-recibio-importante-reconocimiento',
+    },
   },
   {
+    slug: 'cerclaje-cervicoistmico-laparoscopico',
     date: '06-12-24',
+    dateTime: '2024-12-06',
     title:
       'Cerclaje cervicoístmico laparoscópico: un abordaje sin agujas para el manejo de la insuficiencia cervical en pacientes embarazadas y no embarazadas.',
     description:
       'Publicación realizada junto a Ignacio Miranda-Mendoza, Rocío Durán-Cuiza, Paz Navarrete-Rey, Álvaro Carrasco, Bernardita Walker, Álvaro Insunza y Manuel Parra.',
-    image: surgeryImage,
-    imagePosition: 'center 48%',
+    image: cerclageImage,
+    imageAlt: 'Portada del artículo sobre cerclaje cervicoístmico laparoscópico',
+    body: [
+      'Junto a Ignacio Miranda-Mendoza, Rocío Durán-Cuiza, Paz Navarrete-Rey, Álvaro Carrasco, Bernardita Walker, Álvaro Insunza y Manuel Parra publicamos en la Revista Europea de Obstetricia, Ginecología y Biología Reproductiva un artículo sobre cerclaje laparoscópico.',
+    ],
+    externalLink: {
+      label: 'Acceder al artículo',
+      url: 'https://www.sciencedirect.com/science/article/abs/pii/S0301211524005633',
+    },
   },
   {
+    slug: 'capitulo-tecnicas-histeroscopia-quirurgica',
     date: '13-10-24',
+    dateTime: '2024-10-13',
     title: 'Nueva publicación de capítulo sobre técnicas de histeroscopía quirúrgica',
     description:
-      'C.A Buitrago Duque, L. Alonso Pacheco, I. Miranda Mendoza y M.E Correa Duclos, autores del capítulo 52 del libro Histeroscopía y Cirugía Intrauterina de L. Alonso Pacheco.',
-    image: researchImage,
-    imagePosition: 'left center',
+      'C.A. Buitrago Duque, I. Alonso Pacheco, I. Miranda Mendoza y M.E. Correa Duclos, autores del capítulo 52 del libro Histeroscopía y Cirugía Intrauterina.',
+    image: hysteroscopyImage,
+    imageAlt: 'Portada del libro Histeroscopía y Cirugía Intrauterina y su capítulo 52',
+    body: [
+      'Junto a C.A. Buitrago Duque, I. Alonso Pacheco, I. Miranda Mendoza y M.E. Correa Duclos fuimos autores del capítulo 52 “Técnicas quirúrgicas IV: adenomiosis, cuerpos extraños, cérvix restantes y malformaciones arteriovenosas” del libro Histeroscopía y Cirugía Intrauterina.',
+    ],
   },
   {
+    slug: 'curso-ecografia-ginecologica-avanzada',
     date: '28-09-24',
+    dateTime: '2024-09-28',
     title: 'Curso de ecografía ginecológica avanzada',
     description: 'Organizado por Dr. Correa, Dr. Nelson Burgos, Dra. Preisler, Dr. Miranda.',
-    image: clinicImage,
-    imagePosition: 'right center',
+    image: ultrasoundCourseImage,
+    imageAlt: 'Afiche del curso de ecografía ginecológica avanzada en Valdivia',
+    body: [
+      'Organizado por Dr. Correa, Dr. Nelson Burgos, Dra. Preisler y Dr. Miranda.',
+      'Se realizó con mucho éxito el curso de ecografía ginecológica avanzada en Valdivia los días 27 y 28 de septiembre del 2024. Contamos con la presencia de destacados especialistas nacionales, quienes expusieron sobre cómo mejorar la planificación preoperatoria a través de la ecografía.',
+      'Actualmente existe un cambio de paradigma, que transita desde la exploración quirúrgica “diagnóstica” hacia un diagnóstico ecográfico de precisión que permite una planificación preoperatoria detallada.',
+      'Agradecemos a los especialistas y expositores por su participación.',
+    ],
   },
   {
+    slug: 'cirugia-adenomiosis-conservacion-uterina',
     date: '07-04-24',
+    dateTime: '2024-04-07',
     title: 'Cirugía adenomiosis con conservación uterina',
     description:
       'Junto a la Dra. Franzel Álvarez y el Dr. Cristian Miranda desarrollamos un artículo científico sobre una técnica quirúrgica para tratar la adenomiosis con conservación uterina, una alternativa real a la histerectomía.',
-    image: surgeryImage,
-    imagePosition: 'left center',
+    image: adenomyosisSurgeryImage,
+    imageAlt: 'Artículo sobre tratamiento quirúrgico conservador de la adenomiosis',
+    body: [
+      'Junto a la Dra. Franzel Álvarez y el Dr. Cristian Miranda desarrollamos un artículo científico sobre una técnica quirúrgica para tratar la adenomiosis con conservación uterina, una alternativa real a la histerectomía.',
+    ],
+    externalLink: {
+      label: 'Leer el artículo completo',
+      url: 'https://www.rechog.com/frame_esp.php?id=270',
+    },
   },
 ]
