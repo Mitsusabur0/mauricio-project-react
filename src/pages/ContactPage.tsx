@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import type { FormEvent } from 'react'
 import { InstagramIcon, MailIcon } from '../components/Icons'
-import { images } from '../data/siteData'
+import contactHeroImage from '../assets/images/contacto/contacto-hero.jpg'
 
 type FormState = { name: string; email: string; message: string }
 type ErrorState = Partial<Record<keyof FormState, string>>
@@ -35,9 +35,9 @@ export function ContactPage() {
   return (
     <>
       <section className="contact-hero">
-        <img src={images.clinic} alt="" aria-hidden="true" />
+        <img src={contactHeroImage} alt="" aria-hidden="true" />
         <div className="contact-hero-overlay" />
-        <div className="contact-hero-content page-shell">
+        <div className="contact-hero-content">
           <h1>Evaluación Dr. Mauricio Correa</h1>
         </div>
       </section>
