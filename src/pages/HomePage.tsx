@@ -3,30 +3,33 @@ import { ArrowIcon } from '../components/Icons'
 import { FaqAccordion } from '../components/FaqAccordion'
 import { SectionHeading } from '../components/SectionHeading'
 import { TreatmentCard } from '../components/TreatmentCard'
-import { credentials, faqs, images, treatments } from '../data/siteData'
+import heroImage from '../assets/images/home/expo_sochog_mauricio_cropped.jpg'
+import surgeryImage from '../assets/images/home/operacion1.webp'
+import { credentials, faqs, treatments } from '../data/siteData'
 
 export function HomePage() {
   return (
     <>
-      <section className="hero-section">
-        <div className="hero-media" aria-hidden="true">
-          <img src={images.clinic} alt="" />
+      <section className="hero-section" aria-labelledby="hero-title">
+        <div className="hero-media hero-media--surgery">
+          <img src={surgeryImage} alt="Equipo médico durante una cirugía laparoscópica" width="750" height="1000" />
         </div>
-        <div className="hero-overlay"></div>
-        <div className="hero-content page-shell">
+        <div className="hero-content">
           <div className="hero-copy">
-            <h1>
+            <h1 id="hero-title">
               Dr. Mauricio<br />Correa
             </h1>
-            <p>Director Unidad Dolor pélvico y Endometriosis</p>
-            <p className="hero-affiliation">Clínica Alemana Valdivia</p>
+            <p>Director Unidad Dolor pélvico y Endometriosis, Clínica Alemana Valdivia</p>
             <div className="hero-actions">
               <Link to="/contact" className="button button--primary">
                 Solicitar evaluación <ArrowIcon />
               </Link>
-              <a href="#tratamientos" className="button button--ghost">Conocer tratamientos</a>
+              <a href="#tratamientos" className="button button--hero-secondary">Conocer tratamientos</a>
             </div>
           </div>
+        </div>
+        <div className="hero-media hero-media--presentation">
+          <img src={heroImage} alt="Dr. Mauricio Correa exponiendo en un congreso de SOCHOG" width="693" height="924" fetchPriority="high" />
         </div>
       </section>
 

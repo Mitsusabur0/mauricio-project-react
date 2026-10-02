@@ -20,7 +20,6 @@ export function AboutPage() {
             <h1>
               Academia y<br />desarrollo profesional
             </h1>
-            <p>Una práctica construida en la convergencia entre atención clínica, docencia e investigación.</p>
           </div>
         </div>
       </section>
@@ -33,8 +32,8 @@ export function AboutPage() {
             </div>
           </aside>
           <article className="biography-copy">
-            <p className="lead">
-              Mauricio Correa es ginecólogo y Doctor en Ciencias Médicas (Ph.D.), con especialidad en cirugía de mínima invasión y formación extensa en endometriosis y dolor pélvico crónico. Está dedicado al tratamiento integral de la endometriosis y el dolor pélvico, con énfasis en técnicas quirúrgicas de mínima invasión. Con experiencia en manejo de la cirugía de endometriosis, adenomiosis, miomatosis, entre otras.
+            <p>
+              <strong>Mauricio Correa es ginecólogo y Doctor en Ciencias Médicas (Ph.D.)</strong>, con especialidad en cirugía de mínima invasión y formación extensa en endometriosis y dolor pélvico crónico. Está dedicado al tratamiento integral de la endometriosis y el dolor pélvico, con énfasis en técnicas quirúrgicas de mínima invasión. Con experiencia en manejo de la cirugía de endometriosis, adenomiosis, miomatosis, entre otras.
             </p>
             <p>
               Actualmente dirige la Unidad de Dolor Pélvico y Endometriosis de la Clínica Alemana de Valdivia y desarrolla una activa labor docente como Director del Instituto de Ginecología y Obstetricia de la Universidad Austral de Chile, integrando la atención clínica, la docencia y la investigación.
@@ -45,7 +44,7 @@ export function AboutPage() {
 
       <section className="gallery-section section-pad">
         <div className="page-shell gallery-heading">
-          <h2>Una mirada al trabajo clínico</h2>
+          <h2>Una mirada al trabajo clínico y académico</h2>
         </div>
         <div className="page-shell editorial-gallery">
           {gallery.map((item) => (

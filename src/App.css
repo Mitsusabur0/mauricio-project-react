@@ -270,73 +270,95 @@
 
 /* Home hero */
 .hero-section {
-  position: relative;
-  min-height: min(850px, calc(100vh - 84px));
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 4fr) minmax(0, 3fr);
+  min-height: clamp(600px, calc(100svh - 85px), 820px);
   overflow: hidden;
-  color: var(--white);
-  background: #322a2b;
+  color: var(--ink);
+  background: var(--paper);
 }
 
-.hero-media,
-.hero-overlay {
-  position: absolute;
-  inset: 0;
+.hero-media {
+  grid-area: 1 / 1;
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  background: var(--wash);
 }
 
 .hero-media img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: 10% 30%;
   animation: hero-reveal 900ms ease both;
 }
 
-.hero-overlay {
-  background: rgba(33, 25, 27, 0.5);
+.hero-media--presentation {
+  grid-area: 1 / 3;
+}
+
+.hero-media--surgery img {
+  object-position: right center;
 }
 
 .hero-content {
+  grid-area: 1 / 2;
   position: relative;
   z-index: 1;
   display: flex;
-  min-height: min(850px, calc(100vh - 84px));
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 56px;
-  padding-block: 100px 76px;
+  min-width: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 80px clamp(24px, 3vw, 64px);
+  text-align: center;
 }
 
 .hero-copy {
+  width: 100%;
+  max-width: 560px;
   animation: copy-rise 700ms 120ms ease both;
 }
 
 .hero-copy h1 {
-  max-width: 760px;
-  margin-bottom: 30px;
+  margin-bottom: 32px;
   font-family: var(--serif);
-  font-size: clamp(4.7rem, 9.6vw, 8.9rem);
+  font-size: clamp(2.1rem, 4.1vw, 5rem);
   font-weight: 400;
-  letter-spacing: -0.065em;
-  line-height: 0.78;
+  letter-spacing: -0.055em;
+  line-height: 0.95;
 }
 
 .hero-copy > p {
-  margin-bottom: 2px;
+  max-width: 460px;
+  margin-inline: auto;
+  margin-bottom: 0;
+  color: var(--wine-dark);
   font-family: var(--serif);
-  font-size: clamp(1.35rem, 2.5vw, 2.05rem);
-  line-height: 1.2;
-}
-
-.hero-copy > span:not(.eyebrow) {
-  color: #ded3d0;
-  font-size: 0.9rem;
+  font-size: clamp(1.15rem, 1.5vw, 1.5rem);
+  line-height: 1.4;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 12px;
   margin-top: 38px;
+}
+
+.button--hero-secondary {
+  color: var(--wine-dark);
+  border-color: var(--wine);
+  background: transparent;
+}
+
+.button--hero-secondary:hover {
+  color: var(--white);
+  border-color: var(--wine-dark);
+  background: var(--wine-dark);
 }
 
 @keyframes hero-reveal {
@@ -687,13 +709,6 @@
   line-height: 0.94;
 }
 
-.about-hero-copy > p {
-  max-width: 650px;
-  margin: 28px 0 0;
-  color: #665f60;
-  font-size: 1.05rem;
-}
-
 .biography-section {
   background: var(--paper);
 }
@@ -705,8 +720,9 @@
 }
 
 .portrait-crop {
-  height: 610px;
+  height: 460px;
   overflow: hidden;
+  border-radius: 8px;
 }
 
 .portrait-crop img {
@@ -725,14 +741,6 @@
   color: #5b5556;
   font-size: 1.04rem;
   line-height: 1.9;
-}
-
-.biography-copy .lead {
-  color: var(--ink);
-  font-family: var(--serif);
-  font-size: clamp(1.4rem, 2.1vw, 1.85rem);
-  letter-spacing: -0.025em;
-  line-height: 1.5;
 }
 
 .gallery-section {
@@ -1306,9 +1314,8 @@
     font-size: 0.7rem;
   }
 
-  .hero-section,
   .hero-content {
-    min-height: 720px;
+    padding: 64px 24px;
   }
 
   .faq-grid {
@@ -1410,41 +1417,67 @@
     text-align: center;
   }
 
-  .hero-section,
-  .hero-content {
-    min-height: calc(100svh - 72px);
+  .hero-section {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: clamp(700px, calc(100svh - 73px), 920px);
+    color: var(--white);
+    background: #292526;
+  }
+
+  .hero-media--presentation {
+    grid-area: 1 / 1;
+    width: 100%;
+  }
+
+  .hero-media--surgery {
+    display: none;
   }
 
   .hero-media img {
-    object-position: 67% center;
+    object-position: 20% 20%;
   }
 
-  .hero-overlay {
-    background: rgba(33, 25, 27, 0.58);
+  .hero-media::after {
+    position: absolute;
+    inset: 0;
+    background: rgba(25, 22, 24, 0.55);
+    content: '';
   }
 
   .hero-content {
-    padding-block: 80px 44px;
+    grid-area: 1 / 1;
+    align-items: center;
+    padding: 40px 24px;
+  }
+
+  .hero-copy {
+    max-width: 480px;
   }
 
   .hero-copy h1 {
     margin-bottom: 24px;
-    font-size: clamp(3.7rem, 19vw, 5.6rem);
-    line-height: 0.83;
+    font-size: clamp(3.2rem, 11vw, 5rem);
   }
 
   .hero-copy > p {
-    max-width: 310px;
+    max-width: 460px;
+    color: var(--white);
     font-size: 1.35rem;
   }
 
   .hero-actions {
     align-items: stretch;
     flex-direction: column;
+    margin-top: 28px;
   }
 
   .hero-actions .button {
     width: 100%;
+  }
+
+  .button--hero-secondary {
+    color: var(--white);
+    border-color: rgba(255, 253, 249, 0.6);
   }
 
   .split-intro {
@@ -1519,16 +1552,11 @@
   }
 
   .portrait-crop {
-    height: 440px;
+    height: 330px;
   }
 
   .biography-copy {
     padding-top: 0;
-  }
-
-  .biography-copy .lead {
-    font-size: 1.45rem;
-    line-height: 1.5;
   }
 
   .editorial-gallery {
@@ -1625,7 +1653,7 @@
   }
 
   .hero-copy h1 {
-    font-size: clamp(2.2rem, 11vw, 2.65rem);
+    font-size: clamp(2.8rem, 12vw, 3.4rem);
   }
 
   .contact-links a {
