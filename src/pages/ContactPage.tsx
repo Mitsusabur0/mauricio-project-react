@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import type { FormEvent } from 'react'
-import { InstagramIcon, MailIcon } from '../components/Icons'
 import contactHeroImage from '../assets/images/contacto/contacto-hero.jpg'
 
 type FormState = { name: string; email: string; message: string }
@@ -46,20 +45,15 @@ export function ContactPage() {
         <div className="page-shell contact-grid">
           <div className="contact-form-panel">
             <h2>Solicita tu evaluación</h2>
-            <p className="contact-intro">
-              Completa el formulario y nos pondremos en contacto contigo para orientar los próximos pasos.
+            <p className="contact-evaluation">
+              Para agendar tu cirugía puedes completar el formulario para evaluación de cirugía prioritaria{' '}
+              <a href="https://tally.so/r/3jGjNY" target="_blank" rel="noreferrer">haciendo click aquí</a>.
+              {' '}Nos contactaremos contigo lo antes posible.
             </p>
 
-            <div className="contact-links">
-              <a href="mailto:doctormauriciocorrea@gmail.com">
-                <MailIcon />
-                <span><small>Correo</small>doctormauriciocorrea@gmail.com</span>
-              </a>
-              <a href="https://www.instagram.com/dr.mauricio.correa/" target="_blank" rel="noreferrer">
-                <InstagramIcon />
-                <span><small>Instagram</small>@dr.mauricio.correa</span>
-              </a>
-            </div>
+            <p className="contact-intro">
+              También puedes escribirnos directamente para resolver tus dudas o realizar consultas a través del siguiente formulario.
+            </p>
 
             <form className="contact-form" onSubmit={submitForm} noValidate>
               <div className="field">

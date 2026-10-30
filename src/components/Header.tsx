@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import { CloseIcon, MenuIcon } from './Icons'
+import { CloseIcon, InstagramIcon, MenuIcon } from './Icons'
 
 const links = [
   { to: '/', label: 'Inicio' },
@@ -45,9 +45,21 @@ export function Header() {
               {link.label}
             </NavLink>
           ))}
-          <NavLink to="/contact" className="nav-cta" onClick={() => setOpen(false)}>
-            Solicitar evaluación
-          </NavLink>
+          <div className="nav-actions">
+            <NavLink to="/contact" className="nav-cta" onClick={() => setOpen(false)}>
+              Solicitar evaluación
+            </NavLink>
+            <a
+              className="nav-instagram"
+              href="https://www.instagram.com/dr.mauricio.correa/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram del Dr. Mauricio Correa (se abre en una nueva pestaña)"
+              onClick={() => setOpen(false)}
+            >
+              <InstagramIcon />
+            </a>
+          </div>
         </nav>
       </div>
     </header>
