@@ -1,11 +1,18 @@
 import clinicImage from '../assets/editorial/clinic-consultation.jpg'
 import researchImage from '../assets/editorial/medical-research.jpg'
 import surgeryImage from '../assets/editorial/minimally-invasive-surgery.jpg'
-import endometriosisStudyImage from '../assets/images/investigacion/1.webp'
-import cerclageImage from '../assets/images/investigacion/2.webp'
-import hysteroscopyImage from '../assets/images/investigacion/3.webp'
-import ultrasoundCourseImage from '../assets/images/investigacion/4.webp'
-import adenomyosisSurgeryImage from '../assets/images/investigacion/5.webp'
+import bladderEndometriosisImage from '../assets/images/investigacion/14-07-26.png'
+import endometriosisStudyImage from '../assets/images/investigacion/01-12-25.webp'
+import cerclageImage from '../assets/images/investigacion/06-12-24.webp'
+import hysteroscopyImage from '../assets/images/investigacion/13-10-24.webp'
+import ultrasoundCourseImage from '../assets/images/investigacion/28-09-24.webp'
+import adenomyosisSurgeryImage from '../assets/images/investigacion/07-04-24.webp'
+import endometriosisTreatmentImage from '../assets/images/home/tratamientos/p-endometriosis-DysclETe.webp'
+import adenomyosisTreatmentImage from '../assets/images/home/tratamientos/p-adenomiosis-D-_O0w1y.webp'
+import hysterectomyTreatmentImage from '../assets/images/home/tratamientos/c-histerectomia-CEBzwUz6.webp'
+import hysteroscopyTreatmentImage from '../assets/images/home/tratamientos/histeroscopia.webp'
+import ovarianCystTreatmentImage from '../assets/images/home/tratamientos/quiste.webp'
+import laparoscopyTreatmentImage from '../assets/images/home/tratamientos/laparoscopia.webp'
 
 export const images = {
   clinic: clinicImage,
@@ -16,13 +23,13 @@ export const images = {
 export const treatments = [
   {
     title: 'Endometriosis',
+    image: endometriosisTreatmentImage,
+    imageAlt: 'Ilustración de la endometriosis en la pelvis',
     description:
       'Enfermedad en la que tejido similar al del interior del útero (endometrio) crece fuera de él, provocando en algunos casos dolor, dificultad para embarazarse, entre otros síntomas. Requiere un diagnóstico y manejo en una unidad con un equipo especializado.',
     detailTitle: 'Cirugía de endometriosis',
     detail:
       'Cirugía compleja que requiere especialización y apoyo de un equipo multidisciplinario (coloproctólogo, urólogo, entre otros). El objetivo es resecar los focos de endometriosis en la pelvis u otras zonas preservando la función de los órganos.',
-    guideIntro:
-      'Puedes visitar la guía para el manejo quirúrgico de la endometriosis diseñada en conjunto con la Sociedad Chilena de Ginecología y Obstetricia (SOCHOG) haciendo click aquí',
     guideLabel:
       'GUÍA INFORMATIVA PARA EL ACOMPAÑAMIENTO EN EL MANEJO QUIRÚRGICO DE LA ENDOMETRIOSIS',
     guideUrl:
@@ -30,31 +37,39 @@ export const treatments = [
   },
   {
     title: 'Adenomiosis',
+    image: adenomyosisTreatmentImage,
+    imageAlt: 'Ilustración de la adenomiosis en el útero',
     description:
       'Condición en que el tejido interior del útero (endometrio) se infiltra en la pared del mismo (miometrio). Puede causar menstruación dolorosa y sangrado abundante. Tratamientos frecuentes son el uso de anticonceptivos, dispositivo intrauterino medicado o, en última instancia, la cirugía.',
   },
   {
     title: 'Extracción del útero (histerectomía)',
+    image: hysterectomyTreatmentImage,
+    imageAlt: 'Ilustración del tratamiento de histerectomía',
     description:
       'Es una cirugía en la que se extirpa el útero. Se indica solo cuando otras alternativas no son suficientes y ya no se desean embarazos.',
-    guideIntro:
-      'Puedes visitar la guía informativa para la histerectomía diseñada en conjunto con la Sociedad Chilena de Ginecología y Obstetricia (SOCHOG) haciendo click aquí',
     guideLabel: 'GUÍA INFORMATIVA PARA LA REALIZACIÓN DE UNA HISTERECTOMÍA',
     guideUrl:
       'https://sochog.cl/wp-content/uploads/2023/10/GUIA-INFORMATIVA-PARA-LA-REALIZACION-DE-UNA-HISTERECTOMIA.pdf',
   },
   {
     title: 'Histeroscopía (pólipos, miomas, otros)',
+    image: hysteroscopyTreatmentImage,
+    imageAlt: 'Ilustración del procedimiento de histeroscopía',
     description:
       'Es un procedimiento mínimamente invasivo que permite observar y tratar desde el interior del útero, sin usar incisiones ni heridas. Pueden tratarse condiciones tales como pólipos, miomas, malformaciones uterinas, entre otros.',
   },
   {
     title: 'Quiste ovárico',
+    image: ovarianCystTreatmentImage,
+    imageAlt: 'Ilustración de un quiste ovárico',
     description:
       'Es una imagen que sugiere un problema en alguno de los ovarios. Cuando son de origen benigno pueden tratarse a través de la remoción del quiste (quistectomía) o del ovario (anexectomía). Si sugieren cáncer requieren además la evaluación de un oncólogo.',
   },
   {
     title: 'Laparoscopía',
+    image: laparoscopyTreatmentImage,
+    imageAlt: 'Ilustración del tratamiento de laparoscopía',
     description:
       'Es una técnica de cirugía que reemplaza el uso de grandes incisiones por otras pequeñas, a través de las cuales se instalan pinzas y una cámara. Producen menos dolor y permiten una mejor visualización a través de la amplificación de la imagen.',
   },
@@ -118,6 +133,25 @@ export type Publication = {
 }
 
 export const publications: Publication[] = [
+  {
+    slug: 'endometriosis-vesical-infiltracion-miometrial-laparoscopia',
+    date: '14-07-26',
+    dateTime: '2026-07-14',
+    title: 'Cirugía laparoscópica de endometriosis vesical con infiltración profunda del miometrio',
+    description:
+      'Reporte de un caso clínico que describe paso a paso la resección laparoscópica de endometriosis en la vejiga y la pared uterina, con reconstrucción de ambos órganos.',
+    image: bladderEndometriosisImage,
+    imageAlt: 'Encabezado del artículo de Cureus sobre endometriosis vesical con infiltración profunda del miometrio',
+    body: [
+      'El Dr. Mauricio Correa, junto a Betsabé Diaz, Franzel Alvarez e Ignacio Miranda-Mendoza, publicó en Cureus un reporte de caso sobre el tratamiento laparoscópico de la endometriosis vesical con infiltración profunda del miometrio, la capa muscular del útero.',
+      'El artículo presenta el caso de una paciente de 30 años con dolor pélvico, síntomas urinarios e infertilidad. Describe paso a paso la resección de la lesión en la vejiga y la pared uterina, la protección de los uréteres y la reconstrucción de ambos órganos mediante sutura por planos.',
+      'La intervención se completó sin complicaciones y el análisis histológico confirmó endometriosis con márgenes de resección libres. A los 12 meses de seguimiento, la paciente presentó resolución completa del dolor y de los síntomas urinarios. La publicación aporta una guía educativa sobre la anatomía quirúrgica y los desafíos diagnósticos de este tipo de endometriosis.',
+    ],
+    externalLink: {
+      label: 'Leer el artículo completo',
+      url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC13472604/',
+    },
+  },
   {
     slug: 'estudio-nacional-endometriosis-reconocimiento',
     date: '01-12-25',

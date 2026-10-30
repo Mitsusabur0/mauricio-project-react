@@ -4,9 +4,10 @@ import { ArrowIcon, PlusIcon } from './Icons'
 type Treatment = {
   title: string
   description: string
+  image: string
+  imageAlt: string
   detailTitle?: string
   detail?: string
-  guideIntro?: string
   guideLabel?: string
   guideUrl?: string
 }
@@ -40,16 +41,19 @@ export function TreatmentCard({ treatment, index }: TreatmentCardProps) {
               <em>{treatment.detailTitle}</em>: {treatment.detail}
             </p>
           )}
-        </div>
-        {treatment.guideIntro && treatment.guideUrl && treatment.guideLabel && (
-          <aside className="guide-callout">
-            <p>{treatment.guideIntro}</p>
-            <a href={treatment.guideUrl} target="_blank" rel="noreferrer">
+          {treatment.guideUrl && treatment.guideLabel && (
+            <a className="treatment-guide-link" href={treatment.guideUrl} target="_blank" rel="noreferrer">
               <span>{treatment.guideLabel}</span>
               <ArrowIcon />
             </a>
-          </aside>
-        )}
+          )}
+        </div>
+        <img
+          className="treatment-image"
+          src={treatment.image}
+          alt={treatment.imageAlt}
+          loading="lazy"
+        />
       </div>
     </article>
   )

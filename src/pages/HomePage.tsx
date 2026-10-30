@@ -37,9 +37,6 @@ export function HomePage() {
         <div className="page-shell credentials-grid">
           <SectionHeading title="Experiencia clínica, docente y científica" />
           <div className="credentials-content">
-            <p>
-              Una trayectoria construida a partir de la práctica clínica, la especialización, la docencia y la participación activa en instituciones médicas.
-            </p>
             <ul className="credentials-list">
               {credentials.map((credential) => (
                 <li key={credential}>
@@ -57,8 +54,8 @@ export function HomePage() {
       <section id="tratamientos" className="treatments-section section-pad">
         <div className="page-shell split-intro">
           <SectionHeading
-            title="Tratamientos con una mirada integral"
-            description="Diagnóstico preciso, decisiones informadas y técnicas de mínima invasión para cada etapa del tratamiento. Cada caso requiere una evaluación personalizada y, cuando corresponde, el trabajo coordinado de un equipo multidisciplinario."
+            title="Tratamientos"
+            description="Cada caso requiere una evaluación personalizada y, cuando corresponde, el trabajo coordinado de un equipo multidisciplinario."
           />
         </div>
         <div className="page-shell treatments-list">
