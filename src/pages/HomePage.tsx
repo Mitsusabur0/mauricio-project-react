@@ -3,17 +3,15 @@ import { ArrowIcon } from '../components/Icons'
 import { FaqAccordion } from '../components/FaqAccordion'
 import { SectionHeading } from '../components/SectionHeading'
 import { TreatmentCard } from '../components/TreatmentCard'
-import heroImage from '../assets/images/home/expo_sochog_mauricio_cropped.jpg'
-import surgeryImage from '../assets/images/home/operacion1.webp'
+import heroVideo from '../assets/videos/contact-hero-1080p.mp4'
 import { credentials, faqs, treatments } from '../data/siteData'
 
 export function HomePage() {
   return (
     <>
       <section className="hero-section" aria-labelledby="hero-title">
-        <div className="hero-media hero-media--surgery">
-          <img src={surgeryImage} alt="Equipo médico durante una cirugía laparoscópica" width="750" height="1000" />
-        </div>
+        <video className="hero-video" src={heroVideo} autoPlay muted loop playsInline aria-hidden="true" />
+        <div className="hero-overlay" />
         <div className="hero-content">
           <div className="hero-copy">
             <h1 id="hero-title">
@@ -27,9 +25,6 @@ export function HomePage() {
               <a href="#tratamientos" className="button button--hero-secondary">Conocer tratamientos</a>
             </div>
           </div>
-        </div>
-        <div className="hero-media hero-media--presentation">
-          <img src={heroImage} alt="Dr. Mauricio Correa exponiendo en un congreso de SOCHOG" width="693" height="924" fetchPriority="high" />
         </div>
       </section>
 

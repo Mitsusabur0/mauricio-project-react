@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import type { FormEvent } from 'react'
-import contactHeroImage from '../assets/images/contacto/contacto-hero.jpg'
+import contactHeroVideo from '../assets/videos/contact-hero-720p.mp4'
 
 type FormState = { name: string; email: string; message: string }
 type ErrorState = Partial<Record<keyof FormState, string>>
@@ -34,7 +34,7 @@ export function ContactPage() {
   return (
     <>
       <section className="contact-hero">
-        <img src={contactHeroImage} alt="" aria-hidden="true" />
+        <video src={contactHeroVideo} autoPlay muted loop playsInline aria-hidden="true" />
         <div className="contact-hero-overlay" />
         <div className="contact-hero-content">
           <h1>Evaluación Dr. Mauricio Correa</h1>
