@@ -46,7 +46,7 @@ export function Header() {
             </NavLink>
           ))}
           <div className="nav-actions">
-            <NavLink to="/contact" className="nav-cta" onClick={() => setOpen(false)}>
+            <NavLink to="/contact#solicitar-evaluacion" className="nav-cta" onClick={() => setOpen(false)}>
               Solicitar evaluación
             </NavLink>
             <a

@@ -24,7 +24,7 @@ function AnswerText({ faq }: { faq: Faq }) {
 }
 
 export function FaqAccordion({ items }: { items: Faq[] }) {
-  const [openIndex, setOpenIndex] = useState<number | null>(0)
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
     <div className="faq-list">

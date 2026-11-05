@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import type { FormEvent } from 'react'
-import contactHeroVideo from '../assets/videos/contact-hero-720p.mp4'
+import contactHeroImage from '../assets/images/contacto/contacto.jpg'
+import contactHeroImageMobile from '../assets/images/contacto/contacto-mobile.webp'
 
 type FormState = { name: string; email: string; message: string }
 type ErrorState = Partial<Record<keyof FormState, string>>
@@ -34,17 +35,19 @@ export function ContactPage() {
   return (
     <>
       <section className="contact-hero">
-        <video src={contactHeroVideo} autoPlay muted loop playsInline aria-hidden="true" />
-        <div className="contact-hero-overlay" />
+        <picture>
+          <source media="(max-width: 760px)" srcSet={contactHeroImageMobile} type="image/webp" />
+          <img src={contactHeroImage} alt="" />
+        </picture>
         <div className="contact-hero-content">
-          <h1>Evaluación Dr. Mauricio Correa</h1>
+          <h1>Contacto</h1>
         </div>
       </section>
 
       <section className="contact-content section-pad">
         <div className="page-shell contact-grid">
           <div className="contact-form-panel">
-            <h2>Solicita tu evaluación</h2>
+            <h2 id="solicitar-evaluacion">Solicita tu evaluación</h2>
             <p className="contact-evaluation">
               Para agendar tu cirugía puedes completar el formulario para evaluación de cirugía prioritaria{' '}
               <a href="https://tally.so/r/3jGjNY" target="_blank" rel="noreferrer">haciendo click aquí</a>.

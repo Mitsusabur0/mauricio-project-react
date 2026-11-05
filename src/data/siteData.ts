@@ -75,6 +75,48 @@ export const treatments = [
   },
 ]
 
+export type ConditionId = 'endometriosis' | 'adenomiosis'
+
+export type Condition = {
+  id: ConditionId
+  name: string
+  tagline: string
+  description: string
+  location: string
+  symptoms: string[]
+}
+
+export const conditions: Condition[] = [
+  {
+    id: 'endometriosis',
+    name: 'Endometriosis',
+    tagline: 'Tejido FUERA del útero',
+    description:
+      'Tejido similar al endometrio crece fuera del útero, sobre los ovarios, las trompas, el intestino y la vejiga.',
+    location: 'Ovarios · Trompas · Intestino · Vejiga · Peritoneo',
+    symptoms: [
+      'Dolor pélvico que empeora con la regla',
+      'Dolor en las relaciones sexuales',
+      'Fatiga intensa y persistente',
+      'Dificultad para concebir',
+    ],
+  },
+  {
+    id: 'adenomiosis',
+    name: 'Adenomiosis',
+    tagline: 'Tejido DENTRO del músculo',
+    description:
+      'Tejido endometrial crece dentro de la pared muscular del útero (miometrio) y la engrosa.',
+    location: 'Pared muscular del útero · Miometrio',
+    symptoms: [
+      'Sangrado menstrual abundante',
+      'Cólicos muy intensos',
+      'Útero agrandado y sensible',
+      'Sensación de presión pélvica',
+    ],
+  },
+]
+
 export const faqs = [
   {
     question: '¿Es normal tener dolor pélvico?',

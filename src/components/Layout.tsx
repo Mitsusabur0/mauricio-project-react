@@ -5,10 +5,16 @@ import { Header } from './Header'
 import { publications } from '../data/siteData'
 
 export function Layout() {
-  const { pathname } = useLocation()
+  const { pathname, hash, key } = useLocation()
+
+  // `key` changes on every navigation, so re-clicking a link to the current hash scrolls again.
+  useEffect(() => {
+    const target = hash ? document.getElementById(hash.slice(1)) : null
+    if (target) target.scrollIntoView()
+    else window.scrollTo({ top: 0, behavior: 'instant' })
+  }, [pathname, hash, key])
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' })
     const titles: Record<string, string> = {
       '/': 'Dr. Mauricio Correa | Ginecología y Endometriosis',
       '/about': 'Academia y desarrollo profesional | Dr. Mauricio Correa',

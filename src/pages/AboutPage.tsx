@@ -58,7 +58,7 @@ export function AboutPage() {
       <section className="closing-cta">
         <div className="page-shell">
           <h2>Conversemos sobre tu caso</h2>
-          <Link to="/contact" className="button button--light">Solicitar evaluación <ArrowIcon /></Link>
+          <Link to="/contact#solicitar-evaluacion" className="button button--light">Solicitar evaluación <ArrowIcon /></Link>
         </div>
       </section>
     </>

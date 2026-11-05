@@ -18,7 +18,7 @@ type TreatmentCardProps = {
 }
 
 export function TreatmentCard({ treatment, index }: TreatmentCardProps) {
-  const [open, setOpen] = useState(index === 0)
+  const [open, setOpen] = useState(false)
   const panelId = `treatment-panel-${index}`
 
   return (

@@ -306,7 +306,7 @@
 .hero-section {
   position: relative;
   display: grid;
-  height: calc(100svh - 85px);
+  min-height: calc(100svh - 85px);
   overflow: hidden;
   color: var(--white);
   background: #292526;
@@ -534,6 +534,207 @@
   fill: none;
   stroke: currentColor;
   stroke-width: 1.5;
+}
+
+/* Conditions diagram */
+.conditions-section {
+  background: var(--white);
+}
+
+.condition-explorer {
+  --condition-accent: var(--wine);
+  /* Organ tones follow the treatment illustrations */
+  --organ-fill: #f2c4b5;
+  --organ-stroke: #d9988a;
+  --organ-cavity: #e3a594;
+  --ovary-fill: #f8eee2;
+  --bowel-fill: #f6ddd0;
+  --bowel-stroke: #e2b9a8;
+  --bowel-highlight: #fcf1e9;
+  --anatomy-leader: #b7ada6;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(48px, 7vw, 110px);
+  align-items: start;
+}
+
+.condition-explorer.is-adenomiosis {
+  --condition-accent: var(--petrol);
+}
+
+.condition-toggle {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.condition-toggle .button {
+  padding-inline: 8px;
+  border-color: var(--line);
+  color: var(--ink);
+  background: transparent;
+  cursor: pointer;
+}
+
+.condition-toggle .button:hover {
+  border-color: #837877;
+}
+
+.condition-toggle .button[aria-pressed='true'] {
+  border-color: var(--condition-accent);
+  color: var(--white);
+  background: var(--condition-accent);
+}
+
+.condition-figure {
+  margin: 0;
+  padding: clamp(12px, 2vw, 28px);
+  border-radius: 14px;
+  background: var(--paper);
+}
+
+.condition-figure svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Low origin: the enlarged uterus grows upward, so the cervix stays hidden behind the bladder */
+.condition-uterus {
+  transform-box: fill-box;
+  transform-origin: 50% 80%;
+  transition: transform 450ms ease;
+}
+
+.condition-uterus-wall {
+  stroke-width: 6;
+  transition: stroke-width 450ms ease;
+}
+
+.is-adenomiosis .condition-uterus {
+  transform: scale(1.07);
+}
+
+.is-adenomiosis .condition-uterus-wall {
+  stroke-width: 11;
+}
+
+.condition-lesions {
+  opacity: 0;
+  transform: scale(0.86);
+  transform-origin: 200px 210px;
+  transition: opacity 450ms ease, transform 450ms ease;
+}
+
+.condition-lesions.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.condition-lesions--endometriosis {
+  fill: var(--wine);
+  stroke: var(--wine-dark);
+  stroke-width: 2.5;
+}
+
+.condition-lesions--adenomiosis {
+  fill: var(--petrol);
+}
+
+.condition-lesion {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.condition-lesions.is-active .condition-lesion {
+  animation: lesion-pulse 2.6s ease-in-out infinite;
+}
+
+.condition-anatomy-label {
+  fill: #5b5556;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+@keyframes lesion-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.72; transform: scale(1.18); }
+}
+
+.condition-details-body {
+  animation: copy-rise 400ms ease both;
+}
+
+.condition-tagline {
+  margin-bottom: 10px;
+  color: var(--condition-accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.condition-details h3 {
+  margin-bottom: 18px;
+  color: var(--condition-accent);
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+.condition-description {
+  margin-bottom: 0;
+  color: #5e5859;
+  font-size: 1.05rem;
+}
+
+.condition-subheading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 32px 0 14px;
+  color: #5b5556;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.condition-subheading::after {
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+  content: '';
+}
+
+.condition-location {
+  margin-bottom: 0;
+  color: var(--ink);
+  font-size: 0.98rem;
+  font-weight: 600;
+}
+
+.condition-symptoms {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: #4b4546;
+}
+
+.condition-symptoms li + li {
+  margin-top: 6px;
+}
+
+.condition-symptoms li::marker {
+  color: var(--condition-accent);
+}
+
+.condition-disclaimer {
+  margin: 32px 0 0;
+  color: var(--muted);
+  font-size: 0.75rem;
 }
 
 /* Credentials */
@@ -1061,26 +1262,20 @@
 }
 
 /* Contact */
-/* Shows the video (1280x720) minus its top 10% and bottom 20% */
+/* Shows the middle 50% of the image (3642x2160) */
 .contact-hero {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 1280 / 504;
+  aspect-ratio: 3642 / 1080;
 }
 
-.contact-hero > video {
+.contact-hero img {
   position: absolute;
-  top: calc(-10% / 0.7);
+  top: -50%;
   left: 0;
   width: 100%;
-  height: calc(100% / 0.7);
+  height: 200%;
   object-fit: cover;
-}
-
-.contact-hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.1);
 }
 
 .contact-hero-content {
@@ -1095,7 +1290,7 @@
 
 .contact-hero h1 {
   margin: 0;
-  color: var(--ink);
+  color: var(--white);
   font-family: var(--serif);
   font-size: clamp(1.65rem, 4.4vw, 4.5rem);
   font-weight: 400;
@@ -1338,6 +1533,11 @@
     max-width: 440px;
   }
 
+  .condition-explorer {
+    grid-template-columns: minmax(0, 680px);
+    gap: 48px;
+  }
+
   .page-hero-grid {
     grid-template-columns: 1fr;
     gap: 50px;
@@ -1426,7 +1626,12 @@
   }
 
   .hero-section {
-    height: calc(100svh - 73px);
+    min-height: calc(100svh - 73px);
+  }
+
+  /* The portrait crop shows about 30% of the 16:9 frame; off-centre keeps the building and river in view */
+  .hero-video {
+    object-position: 62% 50%;
   }
 
   .hero-content {
@@ -1440,7 +1645,7 @@
 
   .hero-copy h1 {
     margin-bottom: 24px;
-    font-size: clamp(3.2rem, 11vw, 5rem);
+    font-size: clamp(3.2rem, 11vw, 3.75rem);
   }
 
   .hero-copy > p {
@@ -1466,7 +1671,7 @@
   .section-heading h2,
   .gallery-heading h2,
   .closing-cta h2 {
-    font-size: clamp(2.6rem, 13vw, 4rem);
+    font-size: clamp(2.25rem, 10vw, 3rem);
   }
 
   .treatment-trigger {
@@ -1513,7 +1718,7 @@
   }
 
   .about-hero h1 {
-    font-size: clamp(2.75rem, 13vw, 4rem);
+    font-size: clamp(2.75rem, 13vw, 3.25rem);
   }
 
   .closing-cta h2 {
@@ -1543,7 +1748,7 @@
   }
 
   .research-heading h1 {
-    font-size: clamp(2.75rem, 13vw, 4rem);
+    font-size: clamp(2.75rem, 13vw, 3.25rem);
   }
 
   .publication-card {
@@ -1556,7 +1761,7 @@
   }
 
   .publication-content h2 {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 6.5vw, 2rem);
   }
 
   .research-detail {
@@ -1574,7 +1779,11 @@
   }
 
   .research-detail-header h1 {
-    font-size: clamp(2.25rem, 9vw, 3.2rem);
+    font-size: clamp(1.75rem, 7.5vw, 2.5rem);
+  }
+
+  .research-participants h2 {
+    font-size: 1.5rem;
   }
 
   .research-detail-media {
@@ -1584,6 +1793,20 @@
 
   .research-detail-body {
     font-size: 1rem;
+  }
+
+  .contact-hero {
+    height: clamp(220px, 60vw, 320px);
+    aspect-ratio: auto;
+  }
+
+  .contact-hero img {
+    top: 0;
+    height: 100%;
+  }
+
+  .contact-hero h1 {
+    font-size: clamp(2.75rem, 13vw, 3.25rem);
   }
 
   .contact-grid {
@@ -1617,6 +1840,13 @@
 
   .footer-bottom {
     padding-block: 12px;
+  }
+}
+
+/* The SVG scales down with its container, so its labels need more user units to stay readable */
+@media (max-width: 520px) {
+  .condition-anatomy-label {
+    font-size: 16.5px;
   }
 }
 
