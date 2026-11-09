@@ -17,7 +17,7 @@ export function Layout() {
   useEffect(() => {
     const titles: Record<string, string> = {
       '/': 'Dr. Mauricio Correa | Ginecología y Endometriosis',
-      '/about': 'Academia y desarrollo profesional | Dr. Mauricio Correa',
+      '/about': 'Acerca de | Dr. Mauricio Correa',
       '/research': 'Investigación | Dr. Mauricio Correa',
       '/contact': 'Evaluación | Dr. Mauricio Correa',
     }
