@@ -1,6 +1,7 @@
 import clinicImage from '../assets/editorial/clinic-consultation.jpg'
 import researchImage from '../assets/editorial/medical-research.jpg'
 import surgeryImage from '../assets/editorial/minimally-invasive-surgery.jpg'
+import intraureteralIcgImage from '../assets/images/investigacion/16-10-26.webp'
 import bladderEndometriosisImage from '../assets/images/investigacion/14-07-26.png'
 import endometriosisStudyImage from '../assets/images/investigacion/01-12-25.webp'
 import cerclageImage from '../assets/images/investigacion/06-12-24.webp'
@@ -175,6 +176,28 @@ export type Publication = {
 }
 
 export const publications: Publication[] = [
+  {
+    slug: 'verde-indocianina-intraureteral-cirugia-ginecologica-benigna',
+    date: '16-10-26',
+    dateTime: '2026-10-16',
+    title: 'Uso de verde de indocianina (ICG) intraureteral en cirugía ginecológica benigna',
+    description:
+      'Video educativo publicado en WebSurg (IRCAD) que muestra cómo el verde de indocianina instilado en el uréter ayuda a identificarlo y protegerlo durante anexectomías, histerectomías complejas y cerclajes abdominales laparoscópicos.',
+    image: intraureteralIcgImage,
+    imageAlt: 'Imagen laparoscópica del video de WebSurg con el uréter derecho iluminado por verde de indocianina junto a un nódulo de endometriosis',
+    body: [
+      'El Dr. Mauricio Correa, junto a Ignacio Miranda-Mendoza, Leonardo Carreño Manríquez, Francisco Herrera y Franzel Álvarez, publicó en WebSurg, la universidad en línea del IRCAD, un video educativo sobre el uso de verde de indocianina (ICG) intraureteral en cirugía ginecológica benigna.',
+      'El video muestra la aplicación del ICG intraureteral como una herramienta intraoperatoria versátil para mejorar la seguridad y la precisión de la cirugía. La técnica comienza con la preparación de la solución de ICG, que se obtiene diluyendo 25 mg de polvo liofilizado en 20 mL de agua bidestilada, lo que da una concentración de 1,25 mg/mL.',
+      'Se presentan dos formas de cateterizar el uréter. La primera utiliza un catéter epidural de calibre 20 G introducido a través de un histeroscopio Bettocchi, un instrumento disponible en los pabellones de ginecología. La segunda emplea un cistoscopio con un catéter ureteral de 6 French. Ambas permiten instilar el ICG directamente en el lumen del uréter, lo que entrega guía por fluorescencia en tiempo real durante la laparoscopía.',
+      'Varios escenarios clínicos ilustran los beneficios de esta técnica. En una paciente con uréter doble, la instilación selectiva de ICG en una de sus ramas demuestra su utilidad para identificar cada uréter por separado. Durante una anexectomía por endometriosis profunda infiltrante, el ICG facilita la disección del ligamento infundibulopélvico y reduce el riesgo de lesión vascular o ureteral. En una histerectomía posterior a una anexectomía, permite identificar con claridad el uréter a pesar de adherencias densas, lo que favorece la seguridad en reintervenciones complejas. Finalmente, durante el cerclaje abdominal laparoscópico, el ICG facilita la visualización de la relación anatómica entre los uréteres, los vasos uterinos y la malla, lo que destaca su papel en la prevención de lesiones iatrogénicas.',
+      'El video destaca el valor del ICG intraureteral como un complemento simple, reproducible y eficaz en la cirugía ginecológica mínimamente invasiva. Al mejorar la orientación anatómica y la toma de decisiones intraoperatoria, contribuye a obtener resultados más seguros en escenarios clínicos desafiantes.',
+      'Los autores agradecen a Magdalena Varas por su valiosa contribución en la creación de las ilustraciones del video.',
+    ],
+    externalLink: {
+      label: 'Ver el video completo',
+      url: 'https://websurg.com/en/doi/vd01en7854',
+    },
+  },
   {
     slug: 'endometriosis-vesical-infiltracion-miometrial-laparoscopia',
     date: '14-07-26',

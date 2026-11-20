@@ -1642,10 +1642,15 @@ html:has(.gallery-lightbox[open]) {
   background: var(--white);
 }
 
+/* Single column (title, text with link, map) while the contact form is disabled.
+   If the form is re-enabled in ContactPage.tsx, restore the two-column layout:
+   grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+   gap: clamp(48px, 7vw, 110px); */
 .contact-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  gap: clamp(48px, 7vw, 110px);
+  max-width: 880px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(32px, 4vw, 48px);
   align-items: start;
 }
 
@@ -1674,6 +1679,7 @@ html:has(.gallery-lightbox[open]) {
 }
 
 .contact-evaluation {
+  max-width: 720px;
   margin-bottom: 20px;
   color: var(--muted);
 }

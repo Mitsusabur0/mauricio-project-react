@@ -1,36 +1,44 @@
-import { useState } from 'react'
-import type { FormEvent } from 'react'
+// CONTACT FORM DISABLED: the contact form is currently hidden and only the
+// evaluation text with its link is shown. All form-related code (imports, types,
+// state, handlers and JSX) is commented out instead of deleted. If the form is
+// needed again in the future, uncomment every block marked "CONTACT FORM DISABLED"
+// in this file.
+//
+// import { useState } from 'react'
+// import type { FormEvent } from 'react'
 import contactHeroImage from '../assets/images/contacto/contacto.jpg'
 import contactHeroImageMobile from '../assets/images/contacto/contacto-mobile.webp'
 
-type FormState = { name: string; email: string; message: string }
-type ErrorState = Partial<Record<keyof FormState, string>>
+// CONTACT FORM DISABLED: uncomment these types to re-enable the form.
+// type FormState = { name: string; email: string; message: string }
+// type ErrorState = Partial<Record<keyof FormState, string>>
 
 export function ContactPage() {
-  const [form, setForm] = useState<FormState>({ name: '', email: '', message: '' })
-  const [errors, setErrors] = useState<ErrorState>({})
-  const [submitted, setSubmitted] = useState(false)
-
-  function submitForm(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault()
-    const nextErrors: ErrorState = {}
-    if (!form.name.trim()) nextErrors.name = 'Ingresa tu nombre.'
-    if (!form.email.trim()) nextErrors.email = 'Ingresa tu correo electrónico.'
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) nextErrors.email = 'Ingresa un correo electrónico válido.'
-    if (!form.message.trim()) nextErrors.message = 'Cuéntanos brevemente el motivo de tu consulta.'
-    setErrors(nextErrors)
-
-    if (Object.keys(nextErrors).length === 0) {
-      setSubmitted(true)
-      setForm({ name: '', email: '', message: '' })
-    }
-  }
-
-  function updateField(field: keyof FormState, value: string) {
-    setForm((current) => ({ ...current, [field]: value }))
-    setErrors((current) => ({ ...current, [field]: undefined }))
-    setSubmitted(false)
-  }
+  // CONTACT FORM DISABLED: uncomment this state and these handlers to re-enable the form.
+  // const [form, setForm] = useState<FormState>({ name: '', email: '', message: '' })
+  // const [errors, setErrors] = useState<ErrorState>({})
+  // const [submitted, setSubmitted] = useState(false)
+  //
+  // function submitForm(event: FormEvent<HTMLFormElement>) {
+  //   event.preventDefault()
+  //   const nextErrors: ErrorState = {}
+  //   if (!form.name.trim()) nextErrors.name = 'Ingresa tu nombre.'
+  //   if (!form.email.trim()) nextErrors.email = 'Ingresa tu correo electrónico.'
+  //   else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) nextErrors.email = 'Ingresa un correo electrónico válido.'
+  //   if (!form.message.trim()) nextErrors.message = 'Cuéntanos brevemente el motivo de tu consulta.'
+  //   setErrors(nextErrors)
+  //
+  //   if (Object.keys(nextErrors).length === 0) {
+  //     setSubmitted(true)
+  //     setForm({ name: '', email: '', message: '' })
+  //   }
+  // }
+  //
+  // function updateField(field: keyof FormState, value: string) {
+  //   setForm((current) => ({ ...current, [field]: value }))
+  //   setErrors((current) => ({ ...current, [field]: undefined }))
+  //   setSubmitted(false)
+  // }
 
   return (
     <>
@@ -53,6 +61,11 @@ export function ContactPage() {
               <a href="https://tally.so/r/3jGjNY" target="_blank" rel="noreferrer">haciendo click aquí</a>.
               {' '}Nos contactaremos contigo lo antes posible.
             </p>
+
+            {/*
+              CONTACT FORM DISABLED: uncomment the intro paragraph and the form below
+              (together with the imports, types, state and handlers at the top of this
+              file) if the contact form is needed again in the future.
 
             <p className="contact-intro">
               También puedes escribirnos directamente para resolver tus dudas o realizar consultas a través del siguiente formulario.
@@ -108,6 +121,7 @@ export function ContactPage() {
                 </p>
               )}
             </form>
+            */}
           </div>
           <div className="contact-map-panel">
             <iframe
